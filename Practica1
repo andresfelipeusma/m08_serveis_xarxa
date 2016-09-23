@@ -1,3 +1,26 @@
 Practica de classe.
 
-1.-
+1.- a) ip addr add 172.16.0.20/16 dev enp5s0
+       ip addr add 172.16.0.19/16 dev enp5s0
+    b) ping 172.16.0.19 per comprovar que es veuen
+2.- Primer fer un arp -a per coneixer la ip de l'altre dispositiu
+ [root@i20 ~]# arp -a 
+? (172.16.0.19) at 40:8d:5c:e4:37:17 [ether] on enp5s0
+gandhi.informatica.escoladeltreball.org (192.168.0.10) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
+gw.informatica.escoladeltreball.org (192.168.0.1) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
+madiba.informatica.escoladeltreball.org (192.168.0.11) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
+
+Després fer un arp amb la ip del dispositiu del que volem saber la MAC
+
+[root@i20 ~]# arp 172.16.0.19
+Address                  HWtype  HWaddress           Flags Mask            Iface
+172.16.0.19              ether   40:8d:5c:e4:37:17   C                     enp5s0
+
+3.-
+Per poder cambiar el nom de la interficie utilitzarem les comandes:
+[root@i20 ~]# ip link set enp5s0 down
+[root@i20 ~]# ip link set name MYNETWORK enp5s0
+[root@i20 ~]# ip link set MYNETWORK up
+
+4.- 
+
