@@ -76,4 +76,20 @@ Amb l'ordre:
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="c4dad2a5-4fdd-4908-bf40-d3fb307262cf", NAME="enp5s0"
 
 10.-
+Trobar ip a partir de un nom de domini:
+[root@localhost ~]# nslookup gandhi
+Server:		192.168.0.10
+Address:	192.168.0.10#53
+
+Name:	gandhi.informatica.escoladeltreball.org
+Address: 192.168.0.10
+
+Trobar nom de domini a partir de una adreça ip:
+[root@localhost ~]# nslookup 192.168.0.10
+Server:		192.168.0.10
+Address:	192.168.0.10#53
+
+10.0.168.192.in-addr.arpa	name = gandhi.informatica.escoladeltreball.org.
+
+
 
