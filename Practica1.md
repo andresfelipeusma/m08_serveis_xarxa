@@ -1,13 +1,18 @@
 # Practica de classe.
 
-## **1.-** a) ip addr add 172.16.0.20/16 dev enp5s0
-       ip addr add 172.16.0.19/16 dev enp5s0
-    b) ping 172.16.0.19 per comprovar que es veuen
-## **2.-** Primer fer un arp -a per coneixer la ip de l'altre dispositiu
- [root@i20 ~]# arp -a 
-? (172.16.0.19) at 40:8d:5c:e4:37:17 [ether] on enp5s0
+## **1.-**
+a) ip addr add 172.16.0.20/16 dev enp5s0
+   ip addr add 172.16.0.19/16 dev enp5s0
+b) ping 172.16.0.19 per comprovar que es veuen
+## **2.-**
+Primer fer un arp -a per coneixer la ip de l'altre dispositiu
+[root@i20 ~]# arp -a 
+? (172.16.0.19) at 40:8d:5c:e4:37:17 [ether] on enp5s0 
+
 gandhi.informatica.escoladeltreball.org (192.168.0.10) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
+
 gw.informatica.escoladeltreball.org (192.168.0.1) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
+
 madiba.informatica.escoladeltreball.org (192.168.0.11) at 60:a4:4c:b1:f4:ed [ether] on enp5s0
 
 Després fer un arp amb la ip del dispositiu del que volem saber la MAC
@@ -33,7 +38,6 @@ Per poder cambiar el nom de la interficie utilitzarem les comandes:
 La velocitat ha augmentat considerablement.
 
 ## **6.-**
-
 [root@i20 ~]# nmcli con add con-name Practica ifname enp5s0 type ethernet ip4 172.16.0.20 gw4 192.168.1.10
 Connection 'enp5s0' (c4dad2a5-4fdd-4908-bf40-d3fb307262cf) successfully added.
 [root@localhost network-scripts]# nmcli conn up Practica
@@ -91,7 +95,4 @@ Server:		192.168.0.10
 Address:	192.168.0.10#53
 
 10.0.168.192.in-addr.arpa	name = gandhi.informatica.escoladeltreball.org.
-
-is,dc=edt,dc=org
-hangetype: delete
 
